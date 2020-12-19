@@ -32,7 +32,6 @@ module.exports = {
 	'plugins': [
 		'@typescript-eslint',
     'import',
-    'jest',
     'jsx-a11y',
     'prefer-arrow',
     'prettier',
