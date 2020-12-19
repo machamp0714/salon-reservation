@@ -7,6 +7,8 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "lint": "yarn eslint './src/**/*.{js,ts,tsx}'; stylelint 'src/**/*.{css,jsx,tsx}'",
+    "format": "prettier --check ./src",
+    "format:fix": "prettier --write ./src",
     "precommit": "lint-staged"
   },
   "dependencies": {
