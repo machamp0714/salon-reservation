@@ -115,6 +115,7 @@ module.exports = {
     },
     react: {
       version: 'detect'
-    }
+		},
+		'import/ignore': ['react-native']
   },
 };
