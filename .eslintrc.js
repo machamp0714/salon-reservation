@@ -55,14 +55,14 @@ module.exports = {
 		'indent': 'off',
 		'@typescript-eslint/indent': 'off',
 		'@typescript-eslint/no-unnecessary-type-assertion': 'error',
-		'prefer-arrow/prefer-arrow-functions': [
-      'error',
-      {
-        disallowPrototype: true,
-        singleReturnOnly: true,
-        classPropertiesAllowed: false
-      }
-		],
+		// 'prefer-arrow/prefer-arrow-functions': [
+    //   'error',
+    //   {
+    //     disallowPrototype: true,
+    //     singleReturnOnly: true,
+    //     classPropertiesAllowed: false
+    //   }
+		// ],
 		'react/jsx-filename-extension': [
       'error',
       {
@@ -115,6 +115,7 @@ module.exports = {
     },
     react: {
       version: 'detect'
-    }
+		},
+		'import/ignore': ['react-native']
   },
 };
