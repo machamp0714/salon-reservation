@@ -1,16 +1,35 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
-import { FirebaseContext } from './contexts';
+
+import { FirebaseContext, OwnerContext } from './contexts';
+
+import { Owner } from './services/models/owner';
 
 const FirebaseApp: FC = ({ children }) => {
+  const [owner, setOwner] = useState<Owner | null>(null);
+
   const auth = firebase.auth();
   const db = firebase.firestore();
 
+  const unsubscribed = auth.onAuthStateChanged(async (firebaseUser) => {
+    if (firebaseUser) {
+      // find owner from firebase
+    } else {
+      setOwner(null);
+    }
+  });
+
+  useEffect(() => {
+    return unsubscribed;
+  });
+
   return (
     <FirebaseContext.Provider value={{ auth, db }}>
-      {children}
+      <OwnerContext.Provider value={{ owner, setOwner }}>
+        {children}
+      </OwnerContext.Provider>
     </FirebaseContext.Provider>
   );
 };
