@@ -6,6 +6,7 @@ import 'firebase/firestore';
 import { FirebaseContext, OwnerContext } from './contexts';
 
 import { Owner } from './services/models/owner';
+import findOwner from './services/find-owner';
 
 const FirebaseApp: FC = ({ children }) => {
   const [owner, setOwner] = useState<Owner | null>(null);
@@ -15,7 +16,8 @@ const FirebaseApp: FC = ({ children }) => {
 
   const unsubscribed = auth.onAuthStateChanged(async (firebaseUser) => {
     if (firebaseUser) {
-      // find owner from firebase
+      const owner = await findOwner(db, firebaseUser.uid);
+      setOwner(owner);
     } else {
       setOwner(null);
     }
