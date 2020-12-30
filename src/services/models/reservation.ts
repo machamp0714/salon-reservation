@@ -5,7 +5,8 @@ export type Reservation = {
   startDate: firebase.firestore.Timestamp;
   endDate: firebase.firestore.Timestamp;
   color: string;
-  customerName: string;
+  customerFirstName: string;
+  customerLastName: string;
   ownerId: string;
   createdAt: firebase.firestore.Timestamp | null;
   updatedAt: firebase.firestore.Timestamp | null;
