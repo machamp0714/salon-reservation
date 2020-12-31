@@ -2,8 +2,8 @@ import firebase from 'firebase/app';
 
 export type Reservation = {
   id?: string;
-  startDate: firebase.firestore.Timestamp;
-  endDate: firebase.firestore.Timestamp;
+  startDate: firebase.firestore.Timestamp | string;
+  endDate: firebase.firestore.Timestamp | string;
   color: string;
   customerFirstName: string;
   customerLastName: string;
