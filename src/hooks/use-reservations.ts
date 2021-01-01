@@ -11,11 +11,12 @@ const useReservations = () => {
   useEffect(() => {
     const { owner } = ownerRef.current;
     const { db } = firebaseRef.current;
+    if (!owner) throw new Error('Not Authorized!');
     if (!db) throw new Error('firebase is not initialized');
 
     const query = db
       .collection(collectionName.reservations)
-      .where('ownerId', '==', owner!.id)
+      .where('ownerId', '==', owner.id)
       .orderBy('startDate', 'desc');
 
     const load = async () => {
