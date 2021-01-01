@@ -25,7 +25,7 @@ const FirebaseApp: FC = ({ children }) => {
 
   useEffect(() => {
     return unsubscribed;
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [unsubscribed]);
 
   return (
     <FirebaseContext.Provider value={{ auth, db }}>
