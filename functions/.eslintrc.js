@@ -17,7 +17,6 @@ module.exports = {
 		'plugin:prettier/recommended',
 		'prettier',
 		'prettier/@typescript-eslint',
-		'prettier/react',
     'prettier/standard'
 	],
 	'parser': '@typescript-eslint/parser',
@@ -32,16 +31,16 @@ module.exports = {
 	'plugins': [
 		'@typescript-eslint',
     'import',
-    'jsx-a11y',
     'prefer-arrow',
     'prettier',
-    'react',
-    'react-hooks',
+    'jest'
 	],
 	'root': true,
-	'rules': {
+  'rules': {
+    // eslint ofificial
 		'newline-before-return': 'error',
-		'no-continue': 'off',
+    'no-continue': 'off',
+    'no-console': 'warn',
 		'require-yield': 'error',
 		'spaced-comment': [
       'error',
@@ -49,61 +48,38 @@ module.exports = {
       {
         markers: ['/'],
       },
-		],
-		'@typescript-eslint/no-non-null-assertion': 'error',
-		'@typescript-eslint/explicit-function-return-type': 'off',
-		'@typescript-eslint/explicit-member-accessibility': 'off',
-		'@typescript-eslint/explicit-module-boundary-types': 'off',
-		'indent': 'off',
-		'@typescript-eslint/indent': 'off',
-		'@typescript-eslint/no-unnecessary-type-assertion': 'error',
-		// 'prefer-arrow/prefer-arrow-functions': [
-    //   'error',
-    //   {
-    //     disallowPrototype: true,
-    //     singleReturnOnly: true,
-    //     classPropertiesAllowed: false
-    //   }
-		// ],
-		'react/jsx-filename-extension': [
-      'error',
-      {
-        extensions: ['jsx', 'tsx']
-      }
     ],
-    'react/jsx-props-no-spreading': [
-      'warn',
-      {
-        custom: 'ignore',
-      },
-		],
-		'react/prop-types': 'off',
-		'react/prefer-stateless-function': 'off',
-		'react-hooks/rules-of-hooks': 'error',
-		'react-hooks/exhaustive-deps': 'error',
-		'import/extensions': [
-      'error',
-      'always',
-      {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never'
-      }
-		],
-		'import/prefer-default-export': 'off',
-		'linebreak-style': [
+    'linebreak-style': [
 			'error',
 			'unix'
 		],
 		'quotes': [
 			'error',
-			'single'
+      'single',
+      { 'avoidEscape': true }
 		],
 		'semi': [
 			'error',
 			'always'
-		]
+		],
+    // @typescript-eslint
+		'@typescript-eslint/explicit-function-return-type': 'off',
+		'@typescript-eslint/explicit-member-accessibility': 'off',
+		'indent': 'off',
+		'@typescript-eslint/indent': 'off',
+		'@typescript-eslint/no-unnecessary-type-assertion': 'error',
+    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/prefer-interface': 'off',
+    // import
+		'import/extensions': [
+      'error',
+      'always',
+      {
+        js: 'never',
+        ts: 'never',
+      }
+		],
+		'import/prefer-default-export': 'off',
 	},
 	settings: {
     'import/parsers': {
@@ -111,13 +87,9 @@ module.exports = {
     },
     'import/resolver': {
       node: {
-        extensions: ['.js', 'jsx', '.ts', '.tsx'],
+        extensions: ['.js', '.ts'],
         paths: ['src'],
       }
     },
-    react: {
-      version: 'detect'
-		},
-		'import/ignore': ['react-native']
   },
 };
