@@ -14,18 +14,18 @@ const FirebaseApp: FC = ({ children }) => {
   const auth = firebase.auth();
   const db = firebase.firestore();
 
-  const unsubscribed = auth.onAuthStateChanged(async (firebaseUser) => {
-    if (firebaseUser) {
-      const owner = await findOwner(db, firebaseUser.uid);
-      setOwner(owner);
-    } else {
-      setOwner(null);
-    }
-  });
-
   useEffect(() => {
+    const unsubscribed = auth.onAuthStateChanged(async (firebaseUser) => {
+      if (firebaseUser) {
+        const owner = await findOwner(db, firebaseUser.uid);
+        setOwner(owner);
+      } else {
+        setOwner(null);
+      }
+    });
+
     return unsubscribed;
-  }, [unsubscribed]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <FirebaseContext.Provider value={{ auth, db }}>
