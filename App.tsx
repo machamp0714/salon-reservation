@@ -1,9 +1,8 @@
 import React from 'react';
 import firebase from 'firebase/app';
 import { firebaseConfig } from './firebase-config';
-
 import FirebaseApp from './src/FirebaseApp';
-import AppNavigator from './src/navigations/AppNavigator';
+import Root from './src/screens/App/Root'
 
 if (!firebase.apps.length) {
 	firebase.initializeApp(firebaseConfig);
@@ -12,7 +11,7 @@ if (!firebase.apps.length) {
 export default function App() {
 	return (
 		<FirebaseApp>
-			<AppNavigator />
+			<Root />
 		</FirebaseApp>
 	);
 }

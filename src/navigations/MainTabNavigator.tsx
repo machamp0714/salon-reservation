@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Icon } from 'react-native-elements';
 
@@ -20,26 +19,24 @@ const tabIcon = (iconName: string) =>
 
 const MainTabNavigator: FC = () => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen
-          name="Reservation"
-          component={ReservationScreen}
-          options={{
-            tabBarLabel: '予約表',
-            tabBarIcon: tabIcon('calendar-alt'),
-          }}
-        />
-        <Tab.Screen
-          name="Customer"
-          component={CustomerScreen}
-          options={{
-            tabBarLabel: '顧客管理',
-            tabBarIcon: tabIcon('users'),
-          }}
-        />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Tab.Navigator>
+      <Tab.Screen
+        name="Reservation"
+        component={ReservationScreen}
+        options={{
+          tabBarLabel: '予約表',
+          tabBarIcon: tabIcon('calendar-alt'),
+        }}
+      />
+      <Tab.Screen
+        name="Customer"
+        component={CustomerScreen}
+        options={{
+          tabBarLabel: '顧客管理',
+          tabBarIcon: tabIcon('users'),
+        }}
+      />
+    </Tab.Navigator>
   );
 };
 

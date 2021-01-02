@@ -33,7 +33,8 @@ const GoogleButton: FC = () => {
         setOwner(theOwner);
       }
     } else {
-      console.log('failed');
+      // FIX
+      console.log('failed'); // eslint-disable-line no-console
     }
   };
 

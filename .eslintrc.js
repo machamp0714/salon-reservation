@@ -42,6 +42,7 @@ module.exports = {
 	'rules': {
 		'newline-before-return': 'error',
 		'no-continue': 'off',
+		'no-console': 'warn',
 		'require-yield': 'error',
 		'spaced-comment': [
       'error',
