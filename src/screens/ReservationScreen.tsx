@@ -1,21 +1,15 @@
 import React, { FC } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { SafeAreaView, Dimensions } from 'react-native';
+import { CalendarList } from 'react-native-calendars';
+
+const height = Dimensions.get('window').height;
 
 const ReservationScreen: FC = () => {
   return (
-    <View style={styles.container}>
-      <Text>ReservationScreen</Text>
-    </View>
+    <SafeAreaView>
+      <CalendarList calendarHeight={height} horizontal={true} />
+    </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default ReservationScreen;
