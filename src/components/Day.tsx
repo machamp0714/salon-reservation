@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 interface DayComponentProps {
   date: {
@@ -15,22 +15,16 @@ interface DayComponentProps {
 
 const Day: FC<DayComponentProps> = ({ date, accessibilityLable, children }) => {
   return (
-    <TouchableOpacity
-      accessibilityLabel={accessibilityLable}
-      style={styles.day}
-    >
+    <View accessibilityLabel={accessibilityLable} style={styles.day}>
       <Text style={styles.text}>{children}</Text>
-    </TouchableOpacity>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   day: {
-    width: 50,
-    height: 110,
-    borderColor: '#C1C1C1',
-    borderStyle: 'solid',
-    borderWidth: 1,
+    width: 55,
+    height: 107,
   },
   text: {
     textAlign: 'center',

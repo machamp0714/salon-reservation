@@ -10,7 +10,7 @@ const theme = {
       marginTop: 0,
       marginBottom: 0,
       flexDirection: 'row',
-      justifyContent: 'space-around',
+      justifyContent: 'start',
     },
   },
   'stylesheet.calendar-list.main': {
