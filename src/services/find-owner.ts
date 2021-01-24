@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 
 import { Owner } from './models/owner';
-import { collectionName } from './constants';
+import { collectionName } from './constants/collections';
 
 const findOwner = async (db: firebase.firestore.Firestore, uid: string) => {
   let theOwner: Owner | null = null;

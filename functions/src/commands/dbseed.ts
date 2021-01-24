@@ -5,7 +5,7 @@ import admin from 'firebase-admin';
 import serviceAccount from '../salon-dev-service-account.json';
 
 import { Reservation } from '../services/models/reservation';
-import { collectionName } from '../services/constants';
+import { collectionName } from '../services/constants/collections';
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount as admin.ServiceAccount)

@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect, useRef } from 'react';
-import { collectionName } from '../services/constants';
+import { collectionName } from '../services/constants/collections';
 import { Reservation } from '../services/models/reservation';
 import { FirebaseContext, OwnerContext } from '../contexts';
 
