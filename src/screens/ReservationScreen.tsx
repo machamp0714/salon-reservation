@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { SafeAreaView, Dimensions } from 'react-native';
-import { CalendarList, LocaleConfig } from 'react-native-calendars';
+import { Calendar, LocaleConfig } from 'react-native-calendars';
 import Day from '../components/Day';
 
 const height = Dimensions.get('window').height;
@@ -24,7 +24,7 @@ const theme = {
 const ReservationScreen: FC = () => {
   return (
     <SafeAreaView>
-      <CalendarList
+      <Calendar
         monthFormat={'yyyy年 MM月'}
         calendarHeight={height}
         horizontal={true}
