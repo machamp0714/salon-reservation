@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { SafeAreaView, Dimensions } from 'react-native';
-import { CalendarList } from 'react-native-calendars';
+import { CalendarList, LocaleConfig } from 'react-native-calendars';
 import Day from '../components/Day';
 
 const height = Dimensions.get('window').height;
@@ -10,7 +10,7 @@ const theme = {
       marginTop: 0,
       marginBottom: 0,
       flexDirection: 'row',
-      justifyContent: 'start',
+      justifyContent: 'flex-start',
     },
   },
   'stylesheet.calendar-list.main': {
@@ -25,6 +25,7 @@ const ReservationScreen: FC = () => {
   return (
     <SafeAreaView>
       <CalendarList
+        monthFormat={'yyyy年 MM月'}
         calendarHeight={height}
         horizontal={true}
         dayComponent={Day}
@@ -33,5 +34,48 @@ const ReservationScreen: FC = () => {
     </SafeAreaView>
   );
 };
+
+LocaleConfig.locales.jp = {
+  monthNames: [
+    '1月',
+    '2月',
+    '3月',
+    '4月',
+    '5月',
+    '6月',
+    '7月',
+    '8月',
+    '9月',
+    '10月',
+    '11月',
+    '12月',
+  ],
+  monthNamesShort: [
+    '1月',
+    '2月',
+    '3月',
+    '4月',
+    '5月',
+    '6月',
+    '7月',
+    '8月',
+    '9月',
+    '10月',
+    '11月',
+    '12月',
+  ],
+  dayNames: [
+    '日曜日',
+    '月曜日',
+    '火曜日',
+    '水曜日',
+    '木曜日',
+    '金曜日',
+    '土曜日',
+  ],
+  dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
+};
+
+LocaleConfig.defaultLocale = 'jp';
 
 export default ReservationScreen;
