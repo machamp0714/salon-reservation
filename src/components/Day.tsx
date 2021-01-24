@@ -13,15 +13,9 @@ interface DayComponentProps {
   accessibilityLable: string;
 }
 
-const Day: FC<DayComponentProps> = ({
-  date,
-  testID,
-  accessibilityLable,
-  children,
-}) => {
+const Day: FC<DayComponentProps> = ({ date, accessibilityLable, children }) => {
   return (
     <TouchableOpacity
-      testID={testID}
       accessibilityLabel={accessibilityLable}
       style={styles.day}
     >

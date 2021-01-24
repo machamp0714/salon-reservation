@@ -4,6 +4,22 @@ import { CalendarList } from 'react-native-calendars';
 import Day from '../components/Day';
 
 const height = Dimensions.get('window').height;
+const theme = {
+  'stylesheet.calendar.main': {
+    week: {
+      marginTop: 0,
+      marginBottom: 0,
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+    },
+  },
+  'stylesheet.calendar-list.main': {
+    calendar: {
+      paddingLeft: 0,
+      paddingRight: 0,
+    },
+  },
+};
 
 const ReservationScreen: FC = () => {
   return (
@@ -12,6 +28,7 @@ const ReservationScreen: FC = () => {
         calendarHeight={height}
         horizontal={true}
         dayComponent={Day}
+        theme={theme}
       />
     </SafeAreaView>
   );
