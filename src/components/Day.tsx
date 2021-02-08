@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import useReservations from '../hooks/use-reservations';
+import Reservations from '../components/Reservations';
 
 interface DayComponentProps {
   date: {
@@ -23,6 +24,7 @@ const Day: FC<DayComponentProps> = ({ date, accessibilityLable, children }) => {
   return (
     <View accessibilityLabel={accessibilityLable} style={styles.day}>
       <Text style={styles.text}>{children}</Text>
+      <Reservations reservations={reservations} />
     </View>
   );
 };
