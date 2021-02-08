@@ -8,14 +8,40 @@ interface ReservationsProps {
 
 const Reservations: FC<ReservationsProps> = ({ reservations }) => {
   return (
-    <View>
+    <View style={styles.container}>
       {reservations.map((reservation) => (
-        <Text key={reservation.id}>{reservation.customerLastName}</Text>
+        <Text
+          key={reservation.id}
+          numberOfLines={1}
+          ellipsizeMode="clip"
+          style={[
+            styles.label,
+            {
+              backgroundColor: reservation.color,
+              borderColor: reservation.color,
+            },
+          ]}
+        >
+          {reservation.customerFirstName} {reservation.customerLastName}
+        </Text>
       ))}
     </View>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    padding: 2,
+  },
+  label: {
+    fontSize: 11,
+    fontWeight: 'bold',
+    color: '#fff',
+    overflow: 'hidden',
+    marginBottom: 2,
+    borderWidth: 1,
+    borderRadius: 3,
+  },
+});
 
 export default Reservations;
