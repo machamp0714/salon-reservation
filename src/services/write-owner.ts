@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
 
 import { Owner, blankOwner } from './models/owner';
-import { collectionName } from './constants';
+import { collectionName } from './constants/collections';
 
 const writeOwner = (
   db: firebase.firestore.Firestore,
