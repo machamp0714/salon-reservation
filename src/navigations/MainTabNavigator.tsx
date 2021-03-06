@@ -26,7 +26,7 @@ const tabBarButton = () =>
 
 const MainTabNavigator: FC = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator tabBarOptions={{ activeTintColor: '#4D7D6D' }}>
       <Tab.Screen
         name="Reservation"
         component={ReservationScreen}
