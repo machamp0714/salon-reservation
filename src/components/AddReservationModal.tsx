@@ -11,7 +11,7 @@ const AddReservationModal: FC = () => {
       <CircleButton
         width={45}
         height={45}
-        color="#4D7D6D"
+        color="#8E8E8F"
         size={15}
         icon="plus"
         handlePress={() => setIsVisible(true)}
