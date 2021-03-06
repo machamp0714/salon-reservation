@@ -1,17 +1,20 @@
 import React, { FC, useState } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import Modal from 'react-native-modal';
-import { Button } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import CircleButton from './CircleButton';
 
 const AddReservationModal: FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   return (
     <>
-      <Button
-        icon={<Icon name="plus" size={15} />}
-        onPress={() => setIsVisible(true)}
+      <CircleButton
+        width={45}
+        height={45}
+        color="#4D7D6D"
+        size={15}
+        icon="plus"
+        handlePress={() => setIsVisible(true)}
       />
       <View>
         <Modal isVisible={isVisible}>
